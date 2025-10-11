@@ -26,7 +26,7 @@ const FramerMouseMove = () => {
 
     return (
         // full-screen wrapper must be pointer-events-none so cursor doesn't block interactions
-        <div className="fixed inset-0 z-[9999] pointer-events-none">
+        <div className="hidden lg:block fixed inset-0 z-[9999] pointer-events-none">
             {/* motion div is positioned via left/top (not transform x/y) */}
             <motion.div
                 className="absolute -translate-x-1/2 -translate-y-1/2"
