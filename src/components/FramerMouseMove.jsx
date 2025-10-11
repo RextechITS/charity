@@ -1,6 +1,6 @@
 // src/components/FramerMouseMove.jsx
-// import { motion, useMotionValue, useSpring } from "framer-motion";
-import { AnimatePresence, motion } from "framer-motion/dom";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+// import { AnimatePresence, motion } from "framer-motion/dom";
 import { useEffect } from "react";
 
 const FramerMouseMove = () => {
