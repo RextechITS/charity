@@ -33,8 +33,8 @@ const FramerMouseMove = () => {
                 style={{ left: springX, top: springY }}
             >
                 {/* outer circle + inner dot (inner is centered via flex) */}
-                <div className="w-8 h-8 rounded-full border-2 border-[#2563eb] flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-[#2563eb]" />
+                <div className="w-8 h-8 rounded-full bg-[#046a58] flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-[#122f2a]" />
                 </div>
             </motion.div>
         </div>
