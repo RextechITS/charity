@@ -13,8 +13,8 @@ export default function Header() {
 
     const navLinkClass = ({ isActive }) =>
         isActive
-            ? "text-[#00c0ff] font-semibold transition"
-            : "hover:text-[#00c0ff] transition";
+            ? "text-[#122f2a] font-semibold transition"
+            : "hover:text-[#122f2a] transition hover:underline hover:underline-offset-8 hover:underline-thickness-4 hover:transition";
 
     return (
         <>
@@ -54,8 +54,9 @@ export default function Header() {
                     </div>
 
                     {/* Second Div */}
-                    <div className="flex items-center gap-2">
-                        <p>Are you ready to help them? Let's become a volunteer!</p>
+                    <div className="flex items-center gap-2 ">
+                        <p className=''
+                        >Are you ready to help them? Let's become a volunteer!</p>
                     </div>
 
                     {/* Third Div */}
@@ -72,28 +73,53 @@ export default function Header() {
                 <img src="/logo.png" alt="Logo" className="" />
 
                 {/* Desktop Nav */}
-                <ul className="hidden lg:flex bg-[#ffc107] py-5 px-7 rounded-full items-center gap-10 text-black font-bold">
-                    <li>
-                        <NavLink to="/" className={navLinkClass}>
-                            Home
-                        </NavLink>
-                    </li>
+                <div className="hidden lg:flex justify-between bg-[#ffc107] py-5 px-10 rounded-full items-center gap-60">
 
-                    <li className="relative group cursor-pointer">
-                        <span className="transition flex items-center">
-                            Causes <span className="ml-2 mt-2">﹀</span>
-                        </span>
-                        <ul className="absolute p-3 space-y-2 top-12 left-0 bg-white font-medium rounded-md shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 min-w-[180px]">
-                            <li><NavLink to="/causes/orphanage" className={navLinkClass}>Orphanage</NavLink></li>
-                            <li><NavLink to="/causes/health-care" className={navLinkClass}>Health Care</NavLink></li>
-                            <li><NavLink to="/causes/water" className={navLinkClass}>Pipe-borne Water</NavLink></li>
-                        </ul>
-                    </li>
+                    <ul className="flex items-center gap-10 text-black font-bold">
+                        <li>
+                            <NavLink to="/" className={navLinkClass}>
+                                Home
+                            </NavLink>
+                        </li>
 
-                    <li><NavLink to="/about" className={navLinkClass}>About Us</NavLink></li>
-                    <li><NavLink to="/news" className={navLinkClass}>News</NavLink></li>
-                    <li><NavLink to="/contact" className={navLinkClass}>Contact Us</NavLink></li>
-                </ul>
+                        <li className="relative group cursor-pointer">
+                            <span className="transition flex items-center">
+                                Causes <span className="ml-2 mt-2 transition-transform group-hover:rotate-180">﹀</span>
+                            </span>
+                            <ul className="absolute p-3 space-y-2 top-12 left-0 bg-white font-medium rounded-md shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 min-w-[180px]">
+                                <li><NavLink to="/causes/orphanage" className={navLinkClass}>Orphanage</NavLink></li>
+                                <li><NavLink to="/causes/health-care" className={navLinkClass}>Health Care</NavLink></li>
+                                <li><NavLink to="/causes/water" className={navLinkClass}>Pipe-borne Water</NavLink></li>
+                            </ul>
+                        </li>
+
+                        <li><NavLink to="/about" className={navLinkClass}>About Us</NavLink></li>
+                        <li><NavLink to="/news" className={navLinkClass}>News</NavLink></li>
+                        <li><NavLink to="/contact" className={navLinkClass}>Contact Us</NavLink></li>
+                    </ul>
+
+                    {/* contact us */}
+                    <div className="flex gap-4">
+                        <div className="bg-[#00c0ff] p-3 h-[55px] rounded-full">
+                            <svg fill="#ffffff" width="30px" height="30px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M12,2 C16.9705627,2 21,5.98572446 21,10.9023647 C21,14.1558559 18.2776716,17.5957933 12.9482526,21.3431516 L12,22 L11.4277959,21.6050955 C5.85042064,17.7558913 3,14.2315185 3,10.9023647 C3,5.98572446 7.02943725,2 12,2 Z M12,3.97830328 C8.13400675,3.97830328 5,7.07831119 5,10.9023647 C5,13.3048538 7.29671943,16.236445 12,19.5818284 C16.7032806,16.236445 19,13.3048538 19,10.9023647 C19,7.07831119 15.8659932,3.97830328 12,3.97830328 Z M12,6 C14.209139,6 16,7.790861 16,10 C16,12.209139 14.209139,14 12,14 C9.790861,14 8,12.209139 8,10 C8,7.790861 9.790861,6 12,6 Z M12,8 C10.8954305,8 10,8.8954305 10,10 C10,11.1045695 10.8954305,12 12,12 C13.1045695,12 14,11.1045695 14,10 C14,8.8954305 13.1045695,8 12,8 Z" />
+                            </svg>
+                        </div>
+                        <div className="w-full lg:w-[80%] flex flex-col md:flex-row justify-between ">
+                            <div>
+                                <p className="text-[#00c0ff]">Location</p>
+                                <p className="text-white">Nigeria </p>
+                            </div>
+
+                            {/*<div>
+                                 <p className="text-white">June - October 2025 </p>
+                            </div> */}
+                        </div>
+
+                    </div>
+
+                </div>
+
 
                 {/* Mobile Menu Button */}
                 <div className="block lg:hidden cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
@@ -110,24 +136,24 @@ export default function Header() {
                     >
                         <path
                             d="M17.54 8.31C18.9 8.31 20 7.21 20 5.85C20 4.49 18.9 3.39 17.54 3.39C16.18 3.39 15.08 4.49 15.08 5.85C15.08 7.21 16.18 8.31 17.54 8.31Z"
-                            stroke="#292D32"
+                            stroke="#122f2a"
                             strokeWidth="1.5"
                         />
                         <path
-                            opacity="0.4"
+                            // opacity="0.4"
                             d="M6.46 8.31C7.82 8.31 8.92 7.21 8.92 5.85C8.92 4.49 7.82 3.39 6.46 3.39C5.1 3.39 4 4.49 4 5.85C4 7.21 5.1 8.31 6.46 8.31Z"
-                            stroke="#292D32"
+                            stroke="#ffc107"
                             strokeWidth="1.5"
                         />
                         <path
-                            opacity="0.4"
+                            // opacity="0.4"
                             d="M17.54 20.61C18.9 20.61 20 19.51 20 18.15C20 16.79 18.9 15.69 17.54 15.69C16.18 15.69 15.08 16.79 15.08 18.15C15.08 19.51 16.18 20.61 17.54 20.61Z"
-                            stroke="#292D32"
+                            stroke="#ffc107"
                             strokeWidth="1.5"
                         />
                         <path
                             d="M6.46 20.61C7.82 20.61 8.92 19.51 8.92 18.15C8.92 16.79 7.82 15.69 6.46 15.69C5.1 15.69 4 16.79 4 18.15C4 19.51 5.1 20.61 6.46 20.61Z"
-                            stroke="#292D32"
+                            stroke="#122f2a"
                             strokeWidth="1.5"
                         />
                     </svg>
