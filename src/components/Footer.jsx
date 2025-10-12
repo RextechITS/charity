@@ -11,7 +11,7 @@ const Footer = () => {
                     <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 lg:gap-20 place-content-center">
 
                         {/* logo, follow us */}
-                        <div className="w-full px-4">
+                        <div data-aos="fade-up" className="w-full px-4">
                             <div className="mb-10 w-full space-y-6">
                                 <Link to="/">
                                     <img
@@ -235,7 +235,7 @@ const LinkGroup = ({ children, header }) => {
     return (
         <>
             <div className="w-full px-4">
-                <div className="mb-10 w-full">
+                <div data-aos="fade-up" className="mb-10 w-full">
                     <h4 className="w-1/2 mb-9 text-xl font-bold text-white border-b  border-b-5 border-b-[#ffc107] pb-3">
                         {header}
                     </h4>
