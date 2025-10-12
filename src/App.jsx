@@ -13,6 +13,7 @@ import { NavLink } from 'react-router-dom';
 import Orphanage from './pages/Orphanage';
 import HealthCare from './pages/HealthCare';
 import PipeBorneWater from './pages/PipeBorneWater';
+import Donate from './pages/Donate';
 
 
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/causes" element={<Causes />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/donate" element={<Donate />} />
 
             {/* Match submenu URLs */}
             <Route path="/causes/orphanage" element={<Orphanage />} />

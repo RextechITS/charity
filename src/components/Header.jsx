@@ -68,7 +68,7 @@ export default function Header() {
             </header>
 
             {/* Main Navigation */}
-            <nav className="w-full lg:w-[90%] mx-auto p-5 sticky flex justify-between items-center z-40 bg-white/10 backdrop-blur-lg">
+            <nav className="w-full lg:w-[86%] mx-auto p-5 sticky flex justify-between items-center z-40 bg-white/10 backdrop-blur-lg">
                 {/* Logo */}
                 <img src="/logo.png" alt="Logo" className="" />
 
@@ -99,27 +99,39 @@ export default function Header() {
                     </ul>
 
                     {/* contact us */}
-                    <div className="flex gap-4">
-                        <div className="bg-[#00c0ff] p-3 h-[55px] rounded-full">
-                            <svg fill="#ffffff" width="30px" height="30px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M12,2 C16.9705627,2 21,5.98572446 21,10.9023647 C21,14.1558559 18.2776716,17.5957933 12.9482526,21.3431516 L12,22 L11.4277959,21.6050955 C5.85042064,17.7558913 3,14.2315185 3,10.9023647 C3,5.98572446 7.02943725,2 12,2 Z M12,3.97830328 C8.13400675,3.97830328 5,7.07831119 5,10.9023647 C5,13.3048538 7.29671943,16.236445 12,19.5818284 C16.7032806,16.236445 19,13.3048538 19,10.9023647 C19,7.07831119 15.8659932,3.97830328 12,3.97830328 Z M12,6 C14.209139,6 16,7.790861 16,10 C16,12.209139 14.209139,14 12,14 C9.790861,14 8,12.209139 8,10 C8,7.790861 9.790861,6 12,6 Z M12,8 C10.8954305,8 10,8.8954305 10,10 C10,11.1045695 10.8954305,12 12,12 C13.1045695,12 14,11.1045695 14,10 C14,8.8954305 13.1045695,8 12,8 Z" />
-                            </svg>
-                        </div>
-                        <div className="w-full lg:w-[80%] flex flex-col md:flex-row justify-between ">
+                    <div className="flex gap-4 items-center">
+
+                        <svg width="40px" height="30px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <title>support</title>
+                            <rect width="24" height="24" fill="none" />
+                            <path d="M12,2a8,8,0,0,0-8,8v1.9A2.92,2.92,0,0,0,3,14a2.88,2.88,0,0,0,1.94,2.61C6.24,19.72,8.85,22,12,22h3V20H12c-2.26,0-4.31-1.7-5.34-4.39l-.21-.55L5.86,15A1,1,0,0,1,5,14a1,1,0,0,1,.5-.86l.5-.29V11a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1v5H13.91a1.5,1.5,0,1,0-1.52,2H20a2,2,0,0,0,2-2V14a2,2,0,0,0-2-2V10A8,8,0,0,0,12,2Z" />
+                        </svg>
+
+
+                        <div className="w-full lg:w-[80%] flex flex-col md:flex-row justify-between">
                             <div>
-                                <p className="text-[#00c0ff]">Location</p>
-                                <p className="text-white">Nigeria </p>
+                                <p className="">Call Us Now</p>
+                                <a href="tel:+2349055549416" className="font-bold">+2349055549416 </a>
                             </div>
 
-                            {/*<div>
-                                 <p className="text-white">June - October 2025 </p>
-                            </div> */}
                         </div>
 
                     </div>
 
                 </div>
 
+                {/* search and donate button */}
+                <div className="flex items-center gap-4">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-black hover:text-[#122f2a] transition cursor-pointer">
+                        <path d="M21 21L15.8 15.8M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+
+                    <button className="w-60 bg-[#ffc107] text-black hover:text-[#ffc107]  px-10 py-5 rounded-full font-semibold hover:bg-[#0e2521] transition duration-500 flex -items-center justify-center gap-4">
+                        Donate Now
+                        <svg fill="currentColor" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.293,20.707a1,1,0,0,1,0-1.414L17.586,5H12a1,1,0,0,1,0-2h8a1,1,0,0,1,1,1v8a1,1,0,0,1-2,0V6.414L4.707,20.707a1,1,0,0,1-1.414,0Z" />
+                        </svg>
+                    </button>
+                </div>
 
                 {/* Mobile Menu Button */}
                 <div className="block lg:hidden cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
@@ -171,7 +183,7 @@ export default function Header() {
                                     onClick={() => toggleSubMenu("causes")}
                                 >
                                     <span className="font-medium">Causes</span>
-                                    <span className="text-xl">{openSubMenu === "causes" ? "−" : "+"}</span>
+                                    <span className="text-xl font-medium">{openSubMenu === "causes" ? "−" : "+"}</span>
                                 </div>
                                 {openSubMenu === "causes" && (
                                     <ul className="mt-2 ml-4 flex flex-col gap-2 text-sm text-gray-600">
@@ -188,6 +200,7 @@ export default function Header() {
                         </ul>
                     </div>
                 )}
+
             </nav>
         </>
     );
