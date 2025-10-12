@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import CurrencyDropdown from './currencyDropdown';
 import LanguageDropdown from './languageDropdown';
+import { Link } from "react-router-dom";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -14,12 +15,12 @@ export default function Header() {
     const navLinkClass = ({ isActive }) =>
         isActive
             ? "text-[#122f2a] font-semibold transition"
-            : "hover:text-[#122f2a] transition hover:underline hover:underline-offset-8 hover:underline-thickness-4 hover:transition";
+            : "hover:text-[#122f2a] transition duration-500 hover:underline hover:underline-offset-8 hover:underline-thickness-8 hover:transition hover:duration-500";
 
     return (
         <>
+            {/* Top Header */}
             <header className="w-full text-white flex justify-between items-center z-50">
-                {/* Top Header */}
                 <div className="hidden w-[90%] mx-auto bg-[#122f2a] lg:flex items-center justify-between rounded-bl-2xl rounded-br-2xl p-4">
                     {/* First Div */}
                     <div className="flex justify-between items-center gap-10">
@@ -68,12 +69,13 @@ export default function Header() {
             </header>
 
             {/* Main Navigation */}
-            <nav className="w-full lg:w-[86%] mx-auto p-5 sticky flex justify-between items-center z-40 bg-white/10 backdrop-blur-lg">
+            <nav className="w-full lg:w-[86%] lg:mx-auto p-5 fixed top-0 lg:top-20 lg:left-28 flex justify-between items-center z-40 bg-white backdrop-blur-lg">
                 {/* Logo */}
-                <img src="/logo.png" alt="Logo" className="" />
+                <Link to="/"><img src="/logo.png" alt="Logo" className="" /></Link>
+
 
                 {/* Desktop Nav */}
-                <div className="hidden lg:flex justify-between bg-[#ffc107] py-5 px-10 rounded-full items-center gap-60">
+                <div className="hidden lg:flex justify-between bg-[#ffc107] py-3 px-14 rounded-full items-center gap-60">
 
                     <ul className="flex items-center gap-10 text-black font-bold">
                         <li>
@@ -84,7 +86,7 @@ export default function Header() {
 
                         <li className="relative group cursor-pointer">
                             <span className="transition flex items-center">
-                                Causes <span className="ml-2 mt-2 transition-transform group-hover:rotate-180">﹀</span>
+                                Causes <span className="ml-2 mt-2 transition-transform duration-500 group-hover:rotate-180">﹀</span>
                             </span>
                             <ul className="absolute p-3 space-y-2 top-12 left-0 bg-white font-medium rounded-md shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 min-w-[180px]">
                                 <li><NavLink to="/causes/orphanage" className={navLinkClass}>Orphanage</NavLink></li>
@@ -110,8 +112,8 @@ export default function Header() {
 
                         <div className="w-full lg:w-[80%] flex flex-col md:flex-row justify-between">
                             <div>
-                                <p className="">Call Us Now</p>
-                                <a href="tel:+2349055549416" className="font-bold">+2349055549416 </a>
+                                <p className="">Call / Text Us Now</p>
+                                <a href="https://wa.me/+2349055549416" target="_blank" rel="noopener noreferrer" className="font-bold">+2349055549416 </a>
                             </div>
 
                         </div>
@@ -121,7 +123,7 @@ export default function Header() {
                 </div>
 
                 {/* search and donate button */}
-                <div className="flex items-center gap-4">
+                <div className="hidden md:flex items-center gap-4">
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-black hover:text-[#122f2a] transition cursor-pointer">
                         <path d="M21 21L15.8 15.8M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
