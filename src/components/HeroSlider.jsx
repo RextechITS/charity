@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const slides = [
     {
@@ -8,8 +9,8 @@ const slides = [
         title: "Giving Help To Those Who Need It.",
         subtitle: "Start Donating Poor People",
         buttons: [
-            { label: "Explore More", style: "bg-[#122f2a] text-white hover:bg-[#ffc107] hover:text-black" },
-            { label: "Get A Quote", style: "bg-[#ffc107] text-black hover:bg-[#122f2a] hover:text-white" },
+            { label: "Explore More", to: "/about", style: "bg-[#122f2a] text-white hover:bg-[#ffc107] hover:text-black" },
+            { label: "Get A Quote", to: "/contact", style: "bg-[#ffc107] text-black hover:bg-[#122f2a] hover:text-white" },
         ],
     },
     {
@@ -18,8 +19,8 @@ const slides = [
         title: "Make The World A Better Place.",
         subtitle: "Together, We Can Help Others",
         buttons: [
-            { label: "Join Us", style: "bg-[#122f2a] text-white hover:bg-[#ffc107] hover:text-black" },
-            { label: "Donate Now", style: "bg-[#ffc107] text-black hover:bg-[#122f2a] hover:text-white" },
+            { label: "Join Us", to: "/join", style: "bg-[#122f2a] text-white hover:bg-[#ffc107] hover:text-black" },
+            { label: "Donate Now", to: "/donate", style: "bg-[#ffc107] text-black hover:bg-[#122f2a] hover:text-white" },
         ],
     },
     {
@@ -28,8 +29,8 @@ const slides = [
         title: "Your Kindness Can Save Lives.",
         subtitle: "Be Part of Something Great",
         buttons: [
-            { label: "Learn More", style: "bg-[#122f2a] text-white hover:bg-[#ffc107] hover:text-black" },
-            { label: "Contribute", style: "bg-[#ffc107] text-black hover:bg-[#122f2a] hover:text-white" },
+            { label: "Learn More", to: "/learn-more", style: "bg-[#122f2a] text-white hover:bg-[#ffc107] hover:text-black" },
+            { label: "Contribute", to: "/contribute", style: "bg-[#ffc107] text-black hover:bg-[#122f2a] hover:text-white" },
         ],
     },
 ];
@@ -40,7 +41,7 @@ const HeroSlider = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrent((prev) => (prev + 1) % slides.length);
-        }, 6000); // 6 seconds per slide
+        }, 6000);
         return () => clearInterval(timer);
     }, []);
 
@@ -58,16 +59,21 @@ const HeroSlider = () => {
                         backgroundImage: `url(${slides[current].image})`,
                         backgroundSize: "cover",
                         backgroundPosition: "top",
-
                     }}
                 >
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-black/50"></div>
 
-                    <img src="/HeroImages/banner-two-shape.png" alt="" className="animate-ping duration-1000 absolute left-0 top-40 " />
-                    <img src="/HeroImages/sprade-base.png" alt="" className="animate-pulse duration-300 absolute right-80 top-80 max-md:right-10 max-md:top-20 contain" />
-
-
+                    <img
+                        src="/HeroImages/banner-two-shape.png"
+                        alt=""
+                        className="animate-ping duration-1000 absolute left-0 top-40"
+                    />
+                    <img
+                        src="/HeroImages/sprade-base.png"
+                        alt=""
+                        className="animate-pulse duration-300 absolute right-80 top-80 max-md:right-10 max-md:top-20 contain"
+                    />
 
                     {/* Text Content */}
                     <div className="relative z-10 flex flex-col gap-4 justify-center h-full text-left px-6 md:px-[10%] text-white max-w-5xl">
@@ -77,9 +83,7 @@ const HeroSlider = () => {
                             transition={{ delay: 0.3 }}
                             className="text-[#ffc107] mb-3 font-bold italic flex items-center gap-2"
                         >
-
                             <img src="/HeroImages/donate-icon.svg" alt="" />
-
                             {slides[current].subtitle}
                         </motion.p>
 
@@ -99,12 +103,13 @@ const HeroSlider = () => {
                             className="flex gap-4"
                         >
                             {slides[current].buttons.map((btn, index) => (
-                                <button
+                                <Link
                                     key={index}
-                                    className={`w-[220px] px-7 py-5 rounded-full font-semibold ${btn.style} hover:opacity-90 transition duration-500 flex items-center justify-center `}
+                                    to={btn.to}
+                                    className={`w-[220px] px-7 py-5 rounded-full font-semibold ${btn.style} hover:opacity-90 transition duration-500 flex items-center justify-center`}
                                 >
                                     {btn.label} &nbsp; ⬈
-                                </button>
+                                </Link>
                             ))}
                         </motion.div>
                     </div>

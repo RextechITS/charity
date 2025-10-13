@@ -216,7 +216,7 @@ const Footer = () => {
 
                 {/* absolutes svgs */}
                 <div>
-                    <span className="absolute bottom-0 left-0 z-[-1] max-sm:left-60 max-sm:bottom-60">
+                    <span className="absolute bottom-80 left-0 z-[-1] max-sm:left-60 ">
                         <img src={HeartImg} alt="heart" className="w-full object-contain animate-pulse" />
                     </span>
 
