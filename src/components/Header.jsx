@@ -69,7 +69,7 @@ export default function Header() {
             </header>
 
             {/* Main Navigation */}
-            <nav className="w-full lg:w-[86%] lg:mx-auto p-5 fixed top-0 lg:top-20 lg:left-28 flex justify-between items-center z-40 bg-white backdrop-blur-lg">
+            <nav className="w-full lg:w-[86%] lg:mx-auto p-5 fixed top-0 lg:top-20 lg:left-28 flex justify-between items-center z-40 bg-white backdrop-blur-lg lg:rounded-xl">
                 {/* Logo */}
                 <Link to="/"><img src="/logo.png" alt="Logo" className="" /></Link>
 

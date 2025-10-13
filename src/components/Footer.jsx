@@ -5,9 +5,35 @@ import HeartImg from "../assets/sprade-light.png";
 const Footer = () => {
     return (
         <>
-            <footer className="relative z-10 bg-[#122f2a] pb-10 pt-20 lg:pb-20 lg:pt-[120px]">
+            <footer className="relative z-10 bg-[#122f2a] pb-10 pt-20 lg:pb-20 lg:pt-[120px] ">
+
                 {/* sections */}
-                <div className="w-[95vw] lg:w-[87%] mx-auto">
+                <div className="w-[95vw] lg:w-[87%] mx-auto space-y-20 lg:space-y-36">
+
+                    {/* subscribe to our newsletter */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 place-content-center place-items-center">
+                        <div data-aos="fade-up" className="w-full px-4 space-y-4 text-center lg:text-left">
+                            <h4 className="text-2xl md:text-4xl font-bold text-white capitalize" > Subscribe to our newsletter</h4>
+                            <p className="text-[#949d9c] capitalize" >regular inspections and feedback mechanism</p>
+                        </div>
+
+                        <div data-aos="fade-up" className="w-full px-4 flex gap-4 justify-center items-center ">
+                            <input id="subscribeEmail" type="email" placeholder="Enter your email" className="w-full md:w-2/4 p-5 rounded-full text-black  bg-white focus:outline-none" required />
+                            <button className="bg-[#ffc107] hover:bg-[#198754] flex justify-center items-center transition ease-in-out duration-500 py-5 px-8 rounded-3xl text-[#122f2a] hover:text-white " >
+                                <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="20px" height="20px" viewBox="0 0 32 32" xml:space="preserve" fill="currentColor" stroke="currentColor">
+                                    <path class="sharpcorners_een" d="M23.35,8.463L11.085,19.881L9,27.85v-9.079L23.35,8.463z M27.857,3.993L1.911,12.642l6.677,5.193
+	                                L27.857,3.993z M9.763,28.884l4.404-5.431l-2.479-1.925L9.763,28.884z M11.979,20.416l-0.017,0.066L22.57,28.71l6.636-24.335
+	                                L11.979,20.416z"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    {/* divider */}
+                    <div className="divider w-full h-[1px] bg-[#667471]"></div>
+
                     <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 lg:gap-20 place-content-center">
 
                         {/* logo, follow us */}
@@ -190,7 +216,7 @@ const Footer = () => {
 
                 {/* absolutes svgs */}
                 <div>
-                    <span className="absolute bottom-0 left-0 z-[-1] max-sm:left-60 max-sm:bottom-20">
+                    <span className="absolute bottom-0 left-0 z-[-1] max-sm:left-60 max-sm:bottom-60">
                         <img src={HeartImg} alt="heart" className="w-full object-contain animate-pulse" />
                     </span>
 
@@ -222,6 +248,9 @@ const Footer = () => {
                         </svg>
                     </span>
                 </div>
+
+                {/* divider */}
+                <div className="divider w-full h-[1px] bg-[#667471] my-10"></div>
 
                 <p className="text-center text-white font-semibold">&copy; {new Date().getFullYear()}. RexTech IT Solutions. All rights reserved....</p>
             </footer>
