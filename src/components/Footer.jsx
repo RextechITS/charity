@@ -14,7 +14,7 @@ const Footer = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 place-content-center place-items-center">
                         <div data-aos="fade-up" className="w-full px-4 space-y-4 text-center lg:text-left">
                             <h4 className="text-2xl md:text-4xl font-bold text-white capitalize" > Subscribe to our newsletter</h4>
-                            <p className="text-[#949d9c] capitalize" >regular inspections and feedback mechanism</p>
+                            <p className="text-[#949d9c] capitalize" >regular inspections and feedback mechanisms</p>
                         </div>
 
                         <div data-aos="fade-up" className="w-full px-4 flex gap-4 justify-center items-center ">

@@ -1,10 +1,30 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import CurrencyDropdown from './currencyDropdown';
 import LanguageDropdown from './languageDropdown';
 import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 export default function Header() {
+
+    // onscroll header
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+
+    // menu
     const [menuOpen, setMenuOpen] = useState(false);
     const [openSubMenu, setOpenSubMenu] = useState(null);
 
@@ -69,7 +89,10 @@ export default function Header() {
             </header>
 
             {/* Main Navigation */}
-            <nav className="w-full lg:w-[86%] lg:mx-auto p-5 fixed top-0 lg:top-20 lg:left-28 flex justify-between items-center z-40 bg-white backdrop-blur-lg lg:rounded-xl">
+            <nav
+                className={`w-full p-5 lg:px-[10%] fixed left-0 flex justify-between items-center z-40 bg-white backdrop-blur-lg transition-all duration-500 ${scrolled ? "top-0 shadow-md" : "lg:top-20 top-0"
+                    }`}
+            >
                 {/* Logo */}
                 <Link to="/"><img src="/logo.png" alt="Logo" className="" /></Link>
 
