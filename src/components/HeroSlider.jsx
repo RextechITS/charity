@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const slides = [
     {
         id: 1,
-        image: "/HeroImages/slide1.jpg",
+        image: "/HeroImages/slide3.jpg",
         title: "Giving Help To Those Who Need It.",
         subtitle: "Start Donating Poor People",
         buttons: [
@@ -25,7 +25,7 @@ const slides = [
     },
     {
         id: 3,
-        image: "/HeroImages/slide3.jpg",
+        image: "/HeroImages/slide1.jpg",
         title: "Your Kindness Can Save Lives.",
         subtitle: "Be Part of Something Great",
         buttons: [
