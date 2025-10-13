@@ -90,7 +90,7 @@ export default function Header() {
 
             {/* Main Navigation */}
             <nav
-                className={`w-full p-5 lg:px-[10%] fixed left-0 flex justify-between items-center z-40 bg-white backdrop-blur-lg transition-all duration-500 ${scrolled ? "top-0 shadow-md" : "lg:top-20 top-0"
+                className={`w-full p-5 lg:px-[8%] fixed left-0 flex justify-between items-center gap-5 z-40 bg-white backdrop-blur-lg transition-all duration-500 ${scrolled ? "top-0 shadow-md" : "lg:top-20 top-0"
                     }`}
             >
                 {/* Logo */}

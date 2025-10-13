@@ -5,10 +5,10 @@ import HeartImg from "../assets/sprade-light.png";
 const Footer = () => {
     return (
         <>
-            <footer className="relative z-10 bg-[#122f2a] pb-10 pt-20 lg:pb-20 lg:pt-[120px] ">
+            <footer className="relative z-10 bg-[#122f2a] pb-10 pt-20 lg:pb-20 lg:pt-[120px] mt-10">
 
                 {/* sections */}
-                <div className="w-[95vw] lg:w-[87%] mx-auto space-y-20 lg:space-y-36">
+                <div className="w-[95vw] lg:w-[87%] mx-auto space-y-16 lg:space-y-28">
 
                     {/* subscribe to our newsletter */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 place-content-center place-items-center">
@@ -32,7 +32,7 @@ const Footer = () => {
                     </div>
 
                     {/* divider */}
-                    <div className="divider w-full h-[1px] bg-[#667471]"></div>
+                    <div className="divider w-[98%] mx-auto h-[1px] bg-[#4e5554]"></div>
 
                     <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 lg:gap-20 place-content-center">
 
@@ -250,7 +250,7 @@ const Footer = () => {
                 </div>
 
                 {/* divider */}
-                <div className="divider w-full h-[1px] bg-[#667471] my-10"></div>
+                <div className="divider w-full h-[1px] bg-[#4e5554] my-10"></div>
 
                 <p className="text-center text-white font-semibold">&copy; {new Date().getFullYear()}. RexTech IT Solutions. All rights reserved....</p>
             </footer>
