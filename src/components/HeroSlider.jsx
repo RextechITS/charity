@@ -91,7 +91,7 @@ const HeroSlider = () => {
                             initial={{ y: 30, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.5 }}
-                            className="text-4xl md:text-6xl font-extrabold leading-[55px] mb-6"
+                            className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[55px] lg:leading-[100px] mb-6"
                         >
                             {slides[current].title}
                         </motion.h1>
