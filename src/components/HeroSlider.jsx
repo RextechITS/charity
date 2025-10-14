@@ -46,7 +46,7 @@ const HeroSlider = () => {
     }, []);
 
     return (
-        <section className="relative w-full h-[80vh] lg:h-[90vh] overflow-hidden">
+        <section className="relative w-full h-[80vh] bg-black lg:h-[90vh] overflow-hidden">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={slides[current].id}
