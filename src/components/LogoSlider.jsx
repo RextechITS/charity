@@ -16,7 +16,7 @@ const logos = [
 const LogoSlider = () => {
     return (
         <section className="bg-[rgb(237,238,239)] py-14">
-            <div className="w-full lg:w-3/5 mx-auto">
+            <div className="w-full lg:w-9/12 mx-auto">
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={30}
@@ -39,7 +39,7 @@ const LogoSlider = () => {
                                 <img
                                     src={logo}
                                     alt={`Logo ${index + 1}`}
-                                    className="h-28 w-auto object-cover hover:opacity-100 transition duration-300"
+                                    className="h-24 lg:h-28 w-auto object-cover hover:opacity-100 transition duration-300"
                                 />
 
                                 {/* <img
