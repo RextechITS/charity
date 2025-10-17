@@ -132,7 +132,7 @@ export default function Home() {
                             </div>
                         </div>
 
-
+                        lorem 50
 
                     </div>
 
