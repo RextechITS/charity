@@ -132,8 +132,6 @@ export default function Home() {
                             </div>
                         </div>
 
-                        guiguytydy
-
                     </div>
 
 
